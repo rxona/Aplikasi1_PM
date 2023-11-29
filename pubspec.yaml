@@ -1,0 +1,56 @@
+name: app_pemrograman_mobile
+description: A new Flutter project.
+publish_to: 'none'
+version: 0.1.0
+
+environment:
+  sdk: '>=2.17.0 <4.0.0'
+
+dependencies:
+  carousel_slider: ^4.2.1
+  equatable: ^2.0.5
+  flutter:
+    sdk: flutter
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+  flutter_lints: ^2.0.0
+
+flutter:
+  assets:
+  - assets/Carousel_Banner/Sample1.jpg
+  - assets/Carousel_Banner/Sample2.jpg
+  - assets/Carousel_Banner/Sample3.jpg
+  - assets/Carousel_Banner/Sample4.jpg
+  - assets/Carousel_Banner/Sample5.jpg
+  - assets/Catalog_Short/Bag.png
+  - assets/Catalog_Short/Cap.png
+  - assets/Catalog_Short/Catalog_All.png
+  - assets/Catalog_Short/Ellipse_All.png
+  - assets/Catalog_Short/Pants.png
+  - assets/Catalog_Short/Shoe.png
+  - assets/Catalog_Short/T-shirt.png
+  - assets/Iconly/Setting.png
+  - assets/Logo-SB/Medium-SB.png
+  
+  fonts:
+  - family: Lato
+    fonts:
+      - asset: assets/Font/Lato/Lato-Regular.ttf
+        weight: 400
+      - asset: assets/Font/Lato/Lato-Italic.ttf
+        weight: 400
+      - asset: assets/Font/Lato/Lato-Bold.ttf
+        weight: 700
+      - asset: assets/Font/Lato/Lato-BoldItalic.ttf
+        weight: 700
+
+  - family: Oswald
+    fonts:
+      - asset: assets/Font/Oswald/static/Oswald-Regular.ttf
+        weight: 400
+      - asset: assets/Font/Oswald/static/Oswald-Bold.ttf
+        weight: 700
+  
+  uses-material-design: true
