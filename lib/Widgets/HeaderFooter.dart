@@ -1,6 +1,6 @@
 import 'package:app_pemrograman_mobile/PageList/Account_Page/Account.dart';
-import 'package:app_pemrograman_mobile/PageList/Discovery_Page/Discovery.dart';
-import 'package:app_pemrograman_mobile/PageList/Search_Page/Search.dart';
+// import 'package:app_pemrograman_mobile/PageList/Discovery_Page/Discovery.dart';
+// import 'package:app_pemrograman_mobile/PageList/Search_Page/Search.dart';
 import 'package:app_pemrograman_mobile/PageList/Transaction_Page/Transaction.dart';
 import 'package:app_pemrograman_mobile/homepage.dart';
 import 'package:flutter/material.dart';
@@ -11,13 +11,13 @@ class HF extends StatefulWidget {
 }
 
 class _HFState extends State<HF> {
-  int _selectedIndex = 0;
+  int _selectedIndex = 1;
 
   List<Widget> _widgetOptions = <Widget>[
-    HomePage(),
-    DiscoveryPage(),
-    SearchPage(),
     TransactionPage(),
+    HomePage(),
+    // DiscoveryPage(),
+    // SearchPage(),
     AccountPage(),
   ];
 
@@ -30,37 +30,40 @@ class _HFState extends State<HF> {
   @override
   Widget build(BuildContext context) {
     // Header
-    Widget headerApp = Container(
-      padding: EdgeInsets.symmetric(vertical: 14, horizontal: 25),
-      alignment: Alignment.bottomCenter,
-      height: 100,
-      decoration: BoxDecoration(color: Color.fromARGB(255, 38, 32, 104)),
-      child: Row(mainAxisAlignment: MainAxisAlignment.spaceBetween, children: [
-        Row(
-          children: const [
-            Text(
-              "Swalayan E-SHOP",
-              style: TextStyle(
-                fontFamily: 'Oswald',
-                fontSize: 25,
-                fontWeight: FontWeight.bold,
-                color: Color.fromARGB(255, 243, 225, 239),
+    Widget headerApp = SafeArea(
+      child: Container(
+        padding: EdgeInsets.symmetric(vertical: 30),
+        alignment: Alignment.center,
+        height: 100,
+        decoration: BoxDecoration(color: Color.fromARGB(255, 38, 32, 104)),
+        child: Row(mainAxisAlignment: MainAxisAlignment.center, children: [
+          Row(
+            children: const [
+              Text(
+                "Swalayan E-SHOP",
+                style: TextStyle(
+                  fontFamily: 'Oswald',
+                  fontSize: 30,
+                  fontWeight: FontWeight.bold,
+                  color: Color.fromARGB(255, 243, 225, 239),
+                ),
               ),
-            ),
-          ],
-        ),
-        Row(
-          children: [
-            Container(
-              child: IconButton(
-                icon: Image.asset('assets/Iconly/Setting.png'),
-                onPressed: () {},
-              ),
-            ),
-          ],
-        )
-      ]),
+            ],
+          ),
+          // Row(
+          //   children: [
+          //     Container(
+          //       child: IconButton(
+          //         icon: Image.asset('assets/Iconly/Setting.png'),
+          //         onPressed: () {},
+          //       ),
+          //     ),
+          //   ],
+          // )
+        ]),
+      ),
     );
+
     // End of Header
 
     return Scaffold(
@@ -91,10 +94,10 @@ class _HFState extends State<HF> {
           backgroundColor: Colors.transparent,
           elevation: 0.0,
           onPressed: () => setState(() {
-            _selectedIndex = 2;
+            _selectedIndex = 1;
           }),
-          tooltip: 'Search',
-          child: Icon(Icons.search),
+          tooltip: 'Home',
+          child: Icon(Icons.home),
           foregroundColor: Color.fromARGB(255, 243, 225, 239),
         ),
       ),
@@ -109,21 +112,21 @@ class _HFState extends State<HF> {
           type: BottomNavigationBarType.fixed,
           items: [
             BottomNavigationBarItem(
-              icon: Icon(Icons.home),
-              label: 'Home',
-            ),
-            BottomNavigationBarItem(
-              icon: Icon(Icons.list),
-              label: 'List',
-            ),
-            BottomNavigationBarItem(
-              icon: Icon(null),
-              label: 'Search',
-            ),
-            BottomNavigationBarItem(
               icon: Icon(Icons.shopping_cart),
               label: 'Cart',
             ),
+            // BottomNavigationBarItem(
+            //   icon: Icon(Icons.list),
+            //   label: 'List',
+            // ),
+            BottomNavigationBarItem(
+              icon: Icon(null),
+              label: 'Home',
+            ),
+            // BottomNavigationBarItem(
+            //   icon: Icon(Icons.shopping_cart),
+            //   label: 'Cart',
+            // ),
             BottomNavigationBarItem(
               icon: Icon(Icons.account_circle),
               label: 'Account',
