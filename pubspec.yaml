@@ -25,6 +25,12 @@ dev_dependencies:
   flutter_test:
     sdk: flutter
   flutter_lints: ^2.0.0
+  flutter_launcher_icons: "^0.13.1"
+
+flutter_launcher_icons:
+  android: "launcher_icon"
+  ios: true
+  image_path: "assets/Logo-SB/Icon-SB.png"
 
 flutter:
   assets:
@@ -38,7 +44,7 @@ flutter:
   - assets/Category/Shoe/
   - assets/Category/T-Shirt/
   - assets/Iconly/Setting.png
-  - assets/Logo-SB/Medium-SB.png
+  - assets/Logo-SB/
   - assets/Misc/Refresh.png
   
   fonts:

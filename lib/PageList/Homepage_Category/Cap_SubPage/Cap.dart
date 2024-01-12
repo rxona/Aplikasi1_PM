@@ -15,6 +15,8 @@ class Cap extends StatefulWidget {
 class _CapState extends State<Cap> {
   List<Item_Box> boxes = [];
 
+  String SearchBar = '';
+
   @override
   void initState() {
     super.initState();
@@ -80,13 +82,16 @@ class _CapState extends State<Cap> {
             ),
             Expanded(
               child: GridView.count(
-                crossAxisCount: 2,
-                physics: NeverScrollableScrollPhysics(),
-                shrinkWrap: true,
-                children: boxes.map((box) {
-                  return buildBox(box);
-                }).toList(),
-              ),
+                  crossAxisCount: 2,
+                  physics: NeverScrollableScrollPhysics(),
+                  shrinkWrap: true,
+                  children: boxes
+                      .where((box) => box.title
+                          .toLowerCase()
+                          .contains(SearchBar.toLowerCase()))
+                      .map((box) {
+                    return buildBox(box);
+                  }).toList()),
             )
           ],
         ),

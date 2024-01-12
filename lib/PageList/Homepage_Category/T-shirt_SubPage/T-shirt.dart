@@ -16,6 +16,8 @@ class Tshirt extends StatefulWidget {
 class _TshirtState extends State<Tshirt> {
   List<Item_Box> boxes = [];
 
+  String SearchBar = '';
+
   @override
   void initState() {
     super.initState();
@@ -69,6 +71,11 @@ class _TshirtState extends State<Tshirt> {
                           border: InputBorder.none,
                           icon: Icon(Icons.search),
                         ),
+                        onChanged: (value) {
+                          setState(() {
+                            SearchBar = value;
+                          });
+                        },
                       ),
                     ),
                     IconButton(
@@ -81,13 +88,16 @@ class _TshirtState extends State<Tshirt> {
             ),
             Expanded(
               child: GridView.count(
-                crossAxisCount: 2,
-                physics: NeverScrollableScrollPhysics(),
-                shrinkWrap: true,
-                children: boxes.map((box) {
-                  return buildBox(box);
-                }).toList(),
-              ),
+                  crossAxisCount: 2,
+                  physics: NeverScrollableScrollPhysics(),
+                  shrinkWrap: true,
+                  children: boxes
+                      .where((box) => box.title
+                          .toLowerCase()
+                          .contains(SearchBar.toLowerCase()))
+                      .map((box) {
+                    return buildBox(box);
+                  }).toList()),
             )
           ],
         ),

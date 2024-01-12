@@ -61,7 +61,7 @@ class _Fit_DetailState extends State<Fit_Detail> {
                     Row(
                       children: [
                         Text(
-                          "Spinning Bike - Sepeda Statis/\nSepeda Platinum",
+                          "Spinning Bike - Sepeda\nStatis/Sepeda Platinum",
                           style: TextStyle(
                             fontFamily: 'Lato',
                             fontSize: 20,
