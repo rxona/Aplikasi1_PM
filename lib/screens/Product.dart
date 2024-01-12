@@ -1,7 +1,33 @@
 import 'package:flutter/material.dart';
+import 'dart:convert';
+import 'package:http/http.dart' as http;
+import 'package:shared_preferences/shared_preferences.dart';
 import 'package:app_pemrograman_mobile/PageList/Account_Page/Profil_Detail/ProfileHeader.dart';
 import 'package:carousel_slider/carousel_slider.dart';
 import '../product.dart';
+
+class Order {
+  String productId;
+  int quantity;
+  int price;
+
+  Order({
+    required this.productId,
+    required this.quantity,
+    required this.price,
+  });
+
+  Future<http.Response> _add() async {
+    final SharedPreferences prefs = await SharedPreferences.getInstance();
+    final String? userId = prefs.getString('id');
+    final url = Uri.https('store-api.cukurukuk.cloud', '/v1/$userId/orders');
+    final res = await http.post(url,
+        body: json.encode(
+            {"productId": productId, "quantity": quantity, "price": price}),
+        headers: {"Content-Type": "application/json"});
+    return res;
+  }
+}
 
 class ProductScreen extends StatefulWidget {
   const ProductScreen({super.key, required this.product});
@@ -13,6 +39,15 @@ class ProductScreen extends StatefulWidget {
 
 class ProductScreenState extends State<ProductScreen> {
   int _currentSlide = 0;
+
+  void _showToast(BuildContext context, String message) {
+    final scaffold = ScaffoldMessenger.of(context);
+    scaffold.showSnackBar(
+      SnackBar(
+        content: Text(message),
+      ),
+    );
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -52,7 +87,7 @@ class ProductScreenState extends State<ProductScreen> {
                     Row(
                       children: [
                         Text(
-                          "Topi Polos Ring Besi Baseball",
+                          widget.product.name,
                           style: TextStyle(
                             fontFamily: 'Lato',
                             fontSize: 20,
@@ -62,7 +97,7 @@ class ProductScreenState extends State<ProductScreen> {
                         ),
                         Spacer(),
                         Text(
-                          "Rp10.000",
+                          "Rp" + widget.product.price.toString(),
                           style: TextStyle(
                             fontFamily: 'Lato',
                             fontSize: 18,
@@ -99,41 +134,14 @@ class ProductScreenState extends State<ProductScreen> {
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
                     Text(
-                      "Memiliki bahan premium cotton berkualitas",
+                      widget.product.description,
                       style: TextStyle(
                         fontFamily: 'Lato',
                         fontSize: 16,
                         fontWeight: FontWeight.normal,
                         color: Color.fromARGB(255, 0, 0, 0),
                       ),
-                    ),
-                    Text(
-                      "\nMemiliki jahitan rapih",
-                      style: TextStyle(
-                        fontFamily: 'Lato',
-                        fontSize: 16,
-                        fontWeight: FontWeight.normal,
-                        color: Color.fromARGB(255, 0, 0, 0),
-                      ),
-                    ),
-                    Text(
-                      "\nBagian belakang memakai ring besi berkualitas guna mengatur besar dan kecilnya topi..",
-                      style: TextStyle(
-                        fontFamily: 'Lato',
-                        fontSize: 16,
-                        fontWeight: FontWeight.normal,
-                        color: Color.fromARGB(255, 0, 0, 0),
-                      ),
-                    ),
-                    Text(
-                      "\nUkuran lingkar kepala 54 - 60 cm",
-                      style: TextStyle(
-                        fontFamily: 'Lato',
-                        fontSize: 16,
-                        fontWeight: FontWeight.normal,
-                        color: Color.fromARGB(255, 0, 0, 0),
-                      ),
-                    ),
+                    )
                   ],
                 ),
               ),
@@ -144,7 +152,20 @@ class ProductScreenState extends State<ProductScreen> {
                       child: Container(
                     height: 60,
                     child: ElevatedButton(
-                        onPressed: () {},
+                        onPressed: () async {
+                          var order = Order(
+                              productId: widget.product.id,
+                              quantity: 1,
+                              price: widget.product.price);
+                          final res = await order._add();
+                          if (res.statusCode == 200) {
+                            _showToast(
+                                context, 'Berhasil ditambahkan ke keranjang');
+                          } else {
+                            _showToast(
+                                context, 'Gagal menambahkan ke keranjang');
+                          }
+                        },
                         style: ElevatedButton.styleFrom(
                             backgroundColor: Colors.green),
                         child: Text(

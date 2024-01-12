@@ -1,10 +1,10 @@
 name: app_pemrograman_mobile
 description: A new Flutter project.
-publish_to: 'none'
+publish_to: "none"
 version: 0.1.0
 
 environment:
-  sdk: '>=2.17.0 <4.0.0'
+  sdk: ">=2.17.0 <4.0.0"
 
 dependencies:
   camera: ^0.10.5+5
@@ -28,36 +28,36 @@ dev_dependencies:
 
 flutter:
   assets:
-  - assets/Carousel_Banner/
-  - assets/Catalog_Short/
-  - assets/Category/Bag/
-  - assets/Category/Cap/
-  - assets/Category/Fitness/
-  - assets/Category/Misc/
-  - assets/Category/Pants/
-  - assets/Category/Shoe/
-  - assets/Category/T-Shirt/
-  - assets/Iconly/Setting.png
-  - assets/Logo-SB/Medium-SB.png
-  - assets/Misc/Refresh.png
-  
-  fonts:
-  - family: Lato
-    fonts:
-      - asset: assets/Font/Lato/Lato-Regular.ttf
-        weight: 400
-      - asset: assets/Font/Lato/Lato-Italic.ttf
-        weight: 400
-      - asset: assets/Font/Lato/Lato-Bold.ttf
-        weight: 700
-      - asset: assets/Font/Lato/Lato-BoldItalic.ttf
-        weight: 700
+    - assets/Carousel_Banner/
+    - assets/Catalog_Short/
+    - assets/Category/Bag/
+    - assets/Category/Cap/
+    - assets/Category/Fitness/
+    # - assets/Category/Misc/
+    - assets/Category/Pants/
+    - assets/Category/Shoe/
+    - assets/Category/T-Shirt/
+    - assets/Iconly/Setting.png
+    - assets/Logo-SB/Medium-SB.png
+    - assets/Misc/Refresh.png
 
-  - family: Oswald
-    fonts:
-      - asset: assets/Font/Oswald/static/Oswald-Regular.ttf
-        weight: 400
-      - asset: assets/Font/Oswald/static/Oswald-Bold.ttf
-        weight: 700
-  
+  fonts:
+    - family: Lato
+      fonts:
+        - asset: assets/Font/Lato/Lato-Regular.ttf
+          weight: 400
+        - asset: assets/Font/Lato/Lato-Italic.ttf
+          weight: 400
+        - asset: assets/Font/Lato/Lato-Bold.ttf
+          weight: 700
+        - asset: assets/Font/Lato/Lato-BoldItalic.ttf
+          weight: 700
+
+    - family: Oswald
+      fonts:
+        - asset: assets/Font/Oswald/static/Oswald-Regular.ttf
+          weight: 400
+        - asset: assets/Font/Oswald/static/Oswald-Bold.ttf
+          weight: 700
+
   uses-material-design: true
