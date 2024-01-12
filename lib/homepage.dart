@@ -1,12 +1,14 @@
 // ignore_for_file: prefer_const_constructors, prefer_const_literals_to_create_immutables
+import 'package:app_pemrograman_mobile/PageList/Homepage_Category/AllCategory.dart';
+import 'package:app_pemrograman_mobile/PageList/Homepage_Category/Bag_SubPage/Bag.dart';
+import 'package:app_pemrograman_mobile/PageList/Homepage_Category/Cap_SubPage/Cap.dart';
+import 'package:app_pemrograman_mobile/PageList/Homepage_Category/Pants_SubPage/Pants.dart';
+import 'package:app_pemrograman_mobile/PageList/Homepage_Category/Shoe_SubPage/Shoe.dart';
+import 'package:app_pemrograman_mobile/PageList/Homepage_Category/T-shirt_SubPage/T-shirt.dart';
 
 import 'Carousel/image.dart';
 import 'Main/Column_Homepage.dart';
-import 'PageList/Search_Page/Search.dart';
-import 'PageList/Account_Page/Account.dart';
-import 'PageList/Discovery_Page/Discovery.dart';
-import 'PageList/Transaction_Page/Transaction.dart';
-import 'Widgets/Widgets.dart';
+import 'Widgets/TheWidgets.dart';
 import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flutter/material.dart';
 
@@ -18,15 +20,6 @@ class HomePage extends StatefulWidget {
 }
 
 class _HomePageState extends State<HomePage> {
-  int selectedIndex = 0;
-
-  final screens = [
-    DiscoveryPage(),
-    SearchPage(),
-    TransactionPage(),
-    AccountPage(),
-  ];
-
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -65,24 +58,54 @@ class _HomePageState extends State<HomePage> {
                 Row(
                   mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                   children: [
-                    buildFileColumn('Cap'),
-                    buildFileColumn('T-shirt'),
-                    buildFileColumn('Pants'),
+                    buildFileColumn(context, "Cap", () {
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(builder: (context) => Cap()),
+                      );
+                    }),
+                    buildFileColumn(context, "T-shirt", () {
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(builder: (context) => Tshirt()),
+                      );
+                    }),
+                    buildFileColumn(context, "Pants", () {
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(builder: (context) => Pants()),
+                      );
+                    }),
                   ],
                 ),
                 SizedBox(
-                  height: 20,
+                  height: 70,
                 ),
                 Row(
                   mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                   children: [
-                    buildFileColumn('Bag'),
-                    buildFileColumn('Shoe'),
-                    buildFileColumn2('Ellipse_All', 'Catalog_All'),
+                    buildFileColumn(context, "Bag", () {
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(builder: (context) => Bag()),
+                      );
+                    }),
+                    buildFileColumn(context, "Shoe", () {
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(builder: (context) => Shoe()),
+                      );
+                    }),
+                    buildFileColumn2(context, "Ellipse_All", "Catalog_All", () {
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(builder: (context) => All_Category()),
+                      );
+                    }),
                   ],
                 ),
                 SizedBox(
-                  height: 115,
+                  height: 140,
                 ),
                 Row(
                   children: [
