@@ -110,7 +110,7 @@ class _All_CategoryState extends State<All_Category> {
           SizedBox(
             height: 20,
           ),
-          CategoriesRow(context, "Alat Lainnya", "Tool", () {
+          CategoriesRow(context, "Alat Lainnya", "Misc", () {
             Navigator.push(
               context,
               MaterialPageRoute(builder: (context) => Misc()),
