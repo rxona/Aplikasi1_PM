@@ -98,47 +98,53 @@ class _Shoe_Detail4State extends State<Shoe_Detail4> {
                   ),
                 ),
               ),
-              Container(
-                margin: EdgeInsets.symmetric(horizontal: 16.0),
-                padding: EdgeInsets.all(16.0),
-                decoration: BoxDecoration(
-                  color: Colors.white,
-                  borderRadius: BorderRadius.circular(8.0),
-                ),
-                child: Column(
-                  crossAxisAlignment: CrossAxisAlignment.start,
+              Expanded(
+                child: ListView(
                   children: [
-                    Text(
-                      "Memiliki ukuran 36 (23 cm), 37 (23.5 cm), 38 (24 cm), 39 (24.5 cm), 40 (25 cm) dengan toleransi size 1 - 2 cm",
-                      style: TextStyle(
-                        fontFamily: 'Lato',
-                        fontSize: 16,
-                        fontWeight: FontWeight.normal,
-                        color: Color.fromARGB(255, 0, 0, 0),
+                    Container(
+                      margin: EdgeInsets.symmetric(horizontal: 16.0),
+                      padding: EdgeInsets.all(16.0),
+                      decoration: BoxDecoration(
+                        color: Colors.white,
+                        borderRadius: BorderRadius.circular(8.0),
                       ),
-                    ),
-                    Text(
-                      "\nMemiliki berat 550 gram",
-                      style: TextStyle(
-                        fontFamily: 'Lato',
-                        fontSize: 16,
-                        fontWeight: FontWeight.normal,
-                        color: Color.fromARGB(255, 0, 0, 0),
-                      ),
-                    ),
-                    Text(
-                      "\nSepatu menggunakan bahan kanvas",
-                      style: TextStyle(
-                        fontFamily: 'Lato',
-                        fontSize: 16,
-                        fontWeight: FontWeight.normal,
-                        color: Color.fromARGB(255, 0, 0, 0),
+                      child: Column(
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: [
+                          Text(
+                            "Memiliki ukuran 36 (23 cm), 37 (23.5 cm), 38 (24 cm), 39 (24.5 cm), 40 (25 cm) dengan toleransi size 1 - 2 cm",
+                            style: TextStyle(
+                              fontFamily: 'Lato',
+                              fontSize: 16,
+                              fontWeight: FontWeight.normal,
+                              color: Color.fromARGB(255, 0, 0, 0),
+                            ),
+                          ),
+                          Text(
+                            "\nMemiliki berat 550 gram",
+                            style: TextStyle(
+                              fontFamily: 'Lato',
+                              fontSize: 16,
+                              fontWeight: FontWeight.normal,
+                              color: Color.fromARGB(255, 0, 0, 0),
+                            ),
+                          ),
+                          Text(
+                            "\nSepatu menggunakan bahan kanvas",
+                            style: TextStyle(
+                              fontFamily: 'Lato',
+                              fontSize: 16,
+                              fontWeight: FontWeight.normal,
+                              color: Color.fromARGB(255, 0, 0, 0),
+                            ),
+                          ),
+                        ],
                       ),
                     ),
                   ],
                 ),
               ),
-              Spacer(),
+              SizedBox(height: 10),
               Row(
                 children: [
                   Expanded(

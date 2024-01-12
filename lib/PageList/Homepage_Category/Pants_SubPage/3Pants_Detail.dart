@@ -62,7 +62,7 @@ class _Pants_Detail3State extends State<Pants_Detail3> {
                     Row(
                       children: [
                         Text(
-                          "Celana Panjang JOGER JOOY",
+                          "Celana Panjang\nJOGER JOOY",
                           style: TextStyle(
                             fontFamily: 'Lato',
                             fontSize: 20,
@@ -98,47 +98,53 @@ class _Pants_Detail3State extends State<Pants_Detail3> {
                   ),
                 ),
               ),
-              Container(
-                margin: EdgeInsets.symmetric(horizontal: 16.0),
-                padding: EdgeInsets.all(16.0),
-                decoration: BoxDecoration(
-                  color: Colors.white,
-                  borderRadius: BorderRadius.circular(8.0),
-                ),
-                child: Column(
-                  crossAxisAlignment: CrossAxisAlignment.start,
+              Expanded(
+                child: ListView(
                   children: [
-                    Text(
-                      "Memiliki Bahan Flecee G240 dan Tekstur Bahan yang lembut, Adem dan Nyaman dipakai...)",
-                      style: TextStyle(
-                        fontFamily: 'Lato',
-                        fontSize: 16,
-                        fontWeight: FontWeight.normal,
-                        color: Color.fromARGB(255, 0, 0, 0),
+                    Container(
+                      margin: EdgeInsets.symmetric(horizontal: 16.0),
+                      padding: EdgeInsets.all(16.0),
+                      decoration: BoxDecoration(
+                        color: Colors.white,
+                        borderRadius: BorderRadius.circular(8.0),
                       ),
-                    ),
-                    Text(
-                      "\nUkuran All Size, dengan Lingkar Pinggang Hingga 110 cm, Lingkar Paha 70 cm, Panjang Hingga 97 cm",
-                      style: TextStyle(
-                        fontFamily: 'Lato',
-                        fontSize: 16,
-                        fontWeight: FontWeight.normal,
-                        color: Color.fromARGB(255, 0, 0, 0),
-                      ),
-                    ),
-                    Text(
-                      "\nMemiliki Warna Tersedia Lengkap (Hitam, Abu-abu, Charcoal, Denim, Taro, Beige, Coklat, Mint, Dustypink, Burgandy, dan Mocca)",
-                      style: TextStyle(
-                        fontFamily: 'Lato',
-                        fontSize: 16,
-                        fontWeight: FontWeight.normal,
-                        color: Color.fromARGB(255, 0, 0, 0),
+                      child: Column(
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: [
+                          Text(
+                            "Memiliki Bahan Flecee G240 dan Tekstur Bahan yang lembut, Adem dan Nyaman dipakai...)",
+                            style: TextStyle(
+                              fontFamily: 'Lato',
+                              fontSize: 16,
+                              fontWeight: FontWeight.normal,
+                              color: Color.fromARGB(255, 0, 0, 0),
+                            ),
+                          ),
+                          Text(
+                            "\nUkuran All Size, dengan Lingkar Pinggang Hingga 110 cm, Lingkar Paha 70 cm, Panjang Hingga 97 cm",
+                            style: TextStyle(
+                              fontFamily: 'Lato',
+                              fontSize: 16,
+                              fontWeight: FontWeight.normal,
+                              color: Color.fromARGB(255, 0, 0, 0),
+                            ),
+                          ),
+                          Text(
+                            "\nMemiliki Warna Tersedia Lengkap (Hitam, Abu-abu, Charcoal, Denim, Taro, Beige, Coklat, Mint, Dustypink, Burgandy, dan Mocca)",
+                            style: TextStyle(
+                              fontFamily: 'Lato',
+                              fontSize: 16,
+                              fontWeight: FontWeight.normal,
+                              color: Color.fromARGB(255, 0, 0, 0),
+                            ),
+                          ),
+                        ],
                       ),
                     ),
                   ],
                 ),
               ),
-              Spacer(),
+              SizedBox(height: 10),
               Row(
                 children: [
                   Expanded(

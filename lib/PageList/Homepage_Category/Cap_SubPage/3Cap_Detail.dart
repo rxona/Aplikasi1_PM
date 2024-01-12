@@ -96,47 +96,53 @@ class _Cap_Detail3State extends State<Cap_Detail3> {
                   ),
                 ),
               ),
-              Container(
-                margin: EdgeInsets.symmetric(horizontal: 16.0),
-                padding: EdgeInsets.all(16.0),
-                decoration: BoxDecoration(
-                  color: Colors.white,
-                  borderRadius: BorderRadius.circular(8.0),
-                ),
-                child: Column(
-                  crossAxisAlignment: CrossAxisAlignment.start,
+              Expanded(
+                child: ListView(
                   children: [
-                    Text(
-                      "Memiliki ukuran panjang 8 cm dengan lingkar topi 56 - 60 cm, dan tinggi topi 11 cm",
-                      style: TextStyle(
-                        fontFamily: 'Lato',
-                        fontSize: 16,
-                        fontWeight: FontWeight.normal,
-                        color: Color.fromARGB(255, 0, 0, 0),
+                    Container(
+                      margin: EdgeInsets.symmetric(horizontal: 16.0),
+                      padding: EdgeInsets.all(16.0),
+                      decoration: BoxDecoration(
+                        color: Colors.white,
+                        borderRadius: BorderRadius.circular(8.0),
                       ),
-                    ),
-                    Text(
-                      "\nBerat topi adalah 80 gram",
-                      style: TextStyle(
-                        fontFamily: 'Lato',
-                        fontSize: 16,
-                        fontWeight: FontWeight.normal,
-                        color: Color.fromARGB(255, 0, 0, 0),
-                      ),
-                    ),
-                    Text(
-                      "\nMemiliki bahan katun + polyester",
-                      style: TextStyle(
-                        fontFamily: 'Lato',
-                        fontSize: 16,
-                        fontWeight: FontWeight.normal,
-                        color: Color.fromARGB(255, 0, 0, 0),
+                      child: Column(
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: [
+                          Text(
+                            "Memiliki ukuran panjang 8 cm dengan lingkar topi 56 - 60 cm, dan tinggi topi 11 cm",
+                            style: TextStyle(
+                              fontFamily: 'Lato',
+                              fontSize: 16,
+                              fontWeight: FontWeight.normal,
+                              color: Color.fromARGB(255, 0, 0, 0),
+                            ),
+                          ),
+                          Text(
+                            "\nBerat topi adalah 80 gram",
+                            style: TextStyle(
+                              fontFamily: 'Lato',
+                              fontSize: 16,
+                              fontWeight: FontWeight.normal,
+                              color: Color.fromARGB(255, 0, 0, 0),
+                            ),
+                          ),
+                          Text(
+                            "\nMemiliki bahan katun + polyester",
+                            style: TextStyle(
+                              fontFamily: 'Lato',
+                              fontSize: 16,
+                              fontWeight: FontWeight.normal,
+                              color: Color.fromARGB(255, 0, 0, 0),
+                            ),
+                          ),
+                        ],
                       ),
                     ),
                   ],
                 ),
               ),
-              Spacer(),
+              SizedBox(height: 10),
               Row(
                 children: [
                   Expanded(

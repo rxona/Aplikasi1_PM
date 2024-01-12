@@ -60,7 +60,7 @@ class _Pants_Detail5State extends State<Pants_Detail5> {
                     Row(
                       children: [
                         Text(
-                          "Celana Panjang Jegging Jumbo",
+                          "Celana Panjang\nJegging Jumbo",
                           style: TextStyle(
                             fontFamily: 'Lato',
                             fontSize: 20,
@@ -96,47 +96,53 @@ class _Pants_Detail5State extends State<Pants_Detail5> {
                   ),
                 ),
               ),
-              Container(
-                margin: EdgeInsets.symmetric(horizontal: 16.0),
-                padding: EdgeInsets.all(16.0),
-                decoration: BoxDecoration(
-                  color: Colors.white,
-                  borderRadius: BorderRadius.circular(8.0),
-                ),
-                child: Column(
-                  crossAxisAlignment: CrossAxisAlignment.start,
+              Expanded(
+                child: ListView(
                   children: [
-                    Text(
-                      "Menggunakan bahan jeans stretch yang elastis dan nyaman dipakai dengan High Quality Control...",
-                      style: TextStyle(
-                        fontFamily: 'Lato',
-                        fontSize: 16,
-                        fontWeight: FontWeight.normal,
-                        color: Color.fromARGB(255, 0, 0, 0),
+                    Container(
+                      margin: EdgeInsets.symmetric(horizontal: 16.0),
+                      padding: EdgeInsets.all(16.0),
+                      decoration: BoxDecoration(
+                        color: Colors.white,
+                        borderRadius: BorderRadius.circular(8.0),
                       ),
-                    ),
-                    Text(
-                      "\nMemiliki lingkar pinggang hingga 115 cm, dengan panjang 90 cm, dan pinggangnya full karet",
-                      style: TextStyle(
-                        fontFamily: 'Lato',
-                        fontSize: 16,
-                        fontWeight: FontWeight.normal,
-                        color: Color.fromARGB(255, 0, 0, 0),
-                      ),
-                    ),
-                    Text(
-                      "\nBisa dipakai oleh orang dengan berat badan 61 - 75 kg",
-                      style: TextStyle(
-                        fontFamily: 'Lato',
-                        fontSize: 16,
-                        fontWeight: FontWeight.normal,
-                        color: Color.fromARGB(255, 0, 0, 0),
+                      child: Column(
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: [
+                          Text(
+                            "Menggunakan bahan jeans stretch yang elastis dan nyaman dipakai dengan High Quality Control...",
+                            style: TextStyle(
+                              fontFamily: 'Lato',
+                              fontSize: 16,
+                              fontWeight: FontWeight.normal,
+                              color: Color.fromARGB(255, 0, 0, 0),
+                            ),
+                          ),
+                          Text(
+                            "\nMemiliki lingkar pinggang hingga 115 cm, dengan panjang 90 cm, dan pinggangnya full karet",
+                            style: TextStyle(
+                              fontFamily: 'Lato',
+                              fontSize: 16,
+                              fontWeight: FontWeight.normal,
+                              color: Color.fromARGB(255, 0, 0, 0),
+                            ),
+                          ),
+                          Text(
+                            "\nBisa dipakai oleh orang dengan berat badan 61 - 75 kg",
+                            style: TextStyle(
+                              fontFamily: 'Lato',
+                              fontSize: 16,
+                              fontWeight: FontWeight.normal,
+                              color: Color.fromARGB(255, 0, 0, 0),
+                            ),
+                          ),
+                        ],
                       ),
                     ),
                   ],
                 ),
               ),
-              Spacer(),
+              SizedBox(height: 10),
               Row(
                 children: [
                   Expanded(

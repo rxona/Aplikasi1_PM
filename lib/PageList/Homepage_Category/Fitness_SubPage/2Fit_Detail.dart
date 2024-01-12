@@ -157,7 +157,7 @@ class _Fit_Detail2State extends State<Fit_Detail2> {
                               ),
                             ),
                             Text(
-                              "\nMax. User Weight: 120 kg\n",
+                              "\nMax. User Weight: 120 kg",
                               style: TextStyle(
                                 fontFamily: 'Lato',
                                 fontSize: 16,

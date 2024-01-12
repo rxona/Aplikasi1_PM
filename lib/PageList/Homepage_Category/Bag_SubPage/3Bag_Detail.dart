@@ -66,7 +66,7 @@ class _Bag_Detail3State extends State<Bag_Detail3> {
                     Row(
                       children: [
                         Text(
-                          "Dompet Kartu Lipat Mini CELSA",
+                          "Dompet Kartu Lipat Mini\nCELSA",
                           style: TextStyle(
                             fontFamily: 'Lato',
                             fontSize: 20,
@@ -102,56 +102,62 @@ class _Bag_Detail3State extends State<Bag_Detail3> {
                   ),
                 ),
               ),
-              Container(
-                margin: EdgeInsets.symmetric(horizontal: 16.0),
-                padding: EdgeInsets.all(16.0),
-                decoration: BoxDecoration(
-                  color: Colors.white,
-                  borderRadius: BorderRadius.circular(8.0),
-                ),
-                child: Column(
-                  crossAxisAlignment: CrossAxisAlignment.start,
+              Expanded(
+                child: ListView(
                   children: [
-                    Text(
-                      "Dompet ini berbahan kulit sintetis",
-                      style: TextStyle(
-                        fontFamily: 'Lato',
-                        fontSize: 16,
-                        fontWeight: FontWeight.normal,
-                        color: Color.fromARGB(255, 0, 0, 0),
+                    Container(
+                      margin: EdgeInsets.symmetric(horizontal: 16.0),
+                      padding: EdgeInsets.all(16.0),
+                      decoration: BoxDecoration(
+                        color: Colors.white,
+                        borderRadius: BorderRadius.circular(8.0),
                       ),
-                    ),
-                    Text(
-                      "\nMemiliki warna hitam dan coklat",
-                      style: TextStyle(
-                        fontFamily: 'Lato',
-                        fontSize: 16,
-                        fontWeight: FontWeight.normal,
-                        color: Color.fromARGB(255, 0, 0, 0),
-                      ),
-                    ),
-                    Text(
-                      "\nDompetnya memiliki ukuran 12.5 x 2 x 10 cm",
-                      style: TextStyle(
-                        fontFamily: 'Lato',
-                        fontSize: 16,
-                        fontWeight: FontWeight.normal,
-                        color: Color.fromARGB(255, 0, 0, 0),
-                      ),
-                    ),
-                    Text(
-                      "\nDompet memiliki berat 131 gram",
-                      style: TextStyle(
-                        fontFamily: 'Lato',
-                        fontSize: 16,
-                        fontWeight: FontWeight.normal,
-                        color: Color.fromARGB(255, 0, 0, 0),
+                      child: Column(
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: [
+                          Text(
+                            "Dompet ini berbahan kulit sintetis",
+                            style: TextStyle(
+                              fontFamily: 'Lato',
+                              fontSize: 16,
+                              fontWeight: FontWeight.normal,
+                              color: Color.fromARGB(255, 0, 0, 0),
+                            ),
+                          ),
+                          Text(
+                            "\nMemiliki warna hitam dan coklat",
+                            style: TextStyle(
+                              fontFamily: 'Lato',
+                              fontSize: 16,
+                              fontWeight: FontWeight.normal,
+                              color: Color.fromARGB(255, 0, 0, 0),
+                            ),
+                          ),
+                          Text(
+                            "\nDompetnya memiliki ukuran 12.5 x 2 x 10 cm",
+                            style: TextStyle(
+                              fontFamily: 'Lato',
+                              fontSize: 16,
+                              fontWeight: FontWeight.normal,
+                              color: Color.fromARGB(255, 0, 0, 0),
+                            ),
+                          ),
+                          Text(
+                            "\nDompet memiliki berat 131 gram",
+                            style: TextStyle(
+                              fontFamily: 'Lato',
+                              fontSize: 16,
+                              fontWeight: FontWeight.normal,
+                              color: Color.fromARGB(255, 0, 0, 0),
+                            ),
+                          ),
+                        ],
                       ),
                     ),
                   ],
                 ),
               ),
-              Spacer(),
+              SizedBox(height: 10),
               Row(
                 children: [
                   Expanded(
