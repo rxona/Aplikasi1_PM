@@ -22,7 +22,6 @@ class _SplashScreenState extends State<SplashScreen>
     isAuthenticated = MyApp.token?.isNotEmpty ?? false;
 
     super.initState();
-    SystemChrome.setEnabledSystemUIMode(SystemUiMode.immersive);
 
     if (isAuthenticated) {
       Future.delayed(Duration(seconds: 3), () {
@@ -39,13 +38,6 @@ class _SplashScreenState extends State<SplashScreen>
         ),
       );
     });
-  }
-
-  @override
-  void dispose() {
-    SystemChrome.setEnabledSystemUIMode(SystemUiMode.manual,
-        overlays: SystemUiOverlay.values);
-    super.dispose();
   }
 
   @override

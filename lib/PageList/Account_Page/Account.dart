@@ -1,6 +1,5 @@
 import 'package:app_pemrograman_mobile/Controller/Auth_Controller.dart';
 import 'package:app_pemrograman_mobile/PageList/Account_Page/About_Us/AboutUs.dart';
-import 'package:app_pemrograman_mobile/PageList/Account_Page/Guide_Book/Guide.dart';
 import 'package:app_pemrograman_mobile/PageList/Account_Page/Profil_Detail/ProfileGet.dart';
 import 'package:app_pemrograman_mobile/PageList/Log_Page/LogPage.dart';
 import 'package:app_pemrograman_mobile/screens/transactions.dart';
@@ -17,15 +16,6 @@ class AccountPage extends StatefulWidget {
 }
 
 class _AccountPageState extends State<AccountPage> {
-  void logout() async {
-    final prefs = await SharedPreferences.getInstance();
-    await prefs.remove('token');
-    await prefs.remove('id');
-    await FirebaseAuth.instance.signOut();
-
-    Get.off(AuthScreen());
-  }
-
   @override
   Widget build(BuildContext context) {
     AuthController authController = Get.find<AuthController>();
@@ -158,19 +148,6 @@ class _AccountPageState extends State<AccountPage> {
               height: 10,
             ),
             MenuButton(
-              icons: Icons.menu_book,
-              text: "Petunjuk Penggunaan",
-              press: () {
-                Navigator.push(
-                    context,
-                    MaterialPageRoute(
-                        builder: (BuildContext context) => Guide()));
-              },
-            ),
-            SizedBox(
-              height: 10,
-            ),
-            MenuButton(
               icons: Icons.info,
               text: "Tentang Kami",
               press: () {
@@ -183,11 +160,6 @@ class _AccountPageState extends State<AccountPage> {
             SizedBox(
               height: 10,
             ),
-            // MenuButton(
-            //   icons: Icons.delete,
-            //   text: "Penghapusan Akun",
-            //   press: () {},
-            // ),
             MenuButton(
               icons: Icons.logout,
               text: "Keluar",
@@ -197,6 +169,15 @@ class _AccountPageState extends State<AccountPage> {
         ))
       ]),
     );
+  }
+
+  void logout() async {
+    final prefs = await SharedPreferences.getInstance();
+    await prefs.remove('token');
+    await prefs.remove('id');
+    await FirebaseAuth.instance.signOut();
+
+    Get.off(AuthScreen());
   }
 }
 

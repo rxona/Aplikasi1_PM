@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:app_pemrograman_mobile/Carousel/image.dart';
 
-class HeroCarouselCard extends StatelessWidget {
+class ImageDisplay extends StatelessWidget {
   final Category category;
-  const HeroCarouselCard({required this.category});
+  const ImageDisplay({required this.category});
 
   @override
   Widget build(BuildContext context) {
