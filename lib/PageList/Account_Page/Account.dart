@@ -3,6 +3,7 @@ import 'package:app_pemrograman_mobile/PageList/Account_Page/About_Us/AboutUs.da
 import 'package:app_pemrograman_mobile/PageList/Account_Page/Guide_Book/Guide.dart';
 import 'package:app_pemrograman_mobile/PageList/Account_Page/Profil_Detail/ProfileGet.dart';
 import 'package:app_pemrograman_mobile/PageList/Log_Page/LogPage.dart';
+import 'package:app_pemrograman_mobile/screens/transactions.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
@@ -129,6 +130,20 @@ class _AccountPageState extends State<AccountPage> {
                     context,
                     MaterialPageRoute(
                         builder: (BuildContext context) => ProfileGet()));
+              },
+            ),
+            SizedBox(
+              height: 10,
+            ),
+            MenuButton(
+              icons: Icons.credit_card,
+              text: "Transaksi",
+              press: () {
+                Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                        builder: (BuildContext context) =>
+                            TransactionsScreen()));
               },
             ),
             SizedBox(
